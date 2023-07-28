@@ -12,8 +12,6 @@ Feeding it - Type `feed` to feed your Chimchar. This will increase its hunger le
 
 Playing with it - Type `play` to play with your Chimchar. This will make it happier.
 
-Cleaning it - Type `clean` to clean your Chimchar. This will increase its hygiene level.
-
 Training it - Type `train` to train your Chimchar. This will make it stronger.
 
 
