@@ -7,9 +7,13 @@ When you start the game, you will be introduced to your new Chimchar. You can gi
 You need to take care of your Chimchar by:
 
 Feeding it - Type `feed` to feed your Chimchar. This will increase its hunger level.
+
 Playing with it - Type `play` to play with your Chimchar. This will make it happier.
+
 Cleaning it - Type `clean` to clean your Chimchar. This will increase its hygiene level.
+
 Training it - Type `train` to train your Chimchar. This will make it stronger.
+
 
 The game ends when your Chimchar Becomes an Infernape. Good luck trainer!
 
