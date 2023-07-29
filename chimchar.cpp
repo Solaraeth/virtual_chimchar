@@ -64,9 +64,12 @@ int main() {
                 "Training - Train " << nickname << " by typing 'train'. This will level up " << nickname << " bringing him ever closer to evolution!.\n\n"
 
                 "Type 'stats' at any time to review " << nickname << "'s hunger, happiness and level.\n"
+                "These are their current Values:\n"
+                << stats[0] << ": " << statValue[0] << " " << stats[1] << ": " << statValue[1] << " " << stats [2] << ": "<< statValue[0] << "\n\n"
+                
                 "Type 'commands' at any time to review commands and their effects.\n\n"
                 
-                "If you balance " << nickname << "'s needs right, " << nickname << " will evolve in no time.\n"
+                "If you balance " << nickname << "'s needs right, " << nickname << " will evolve in no time.\n\n"
                 
                 "Now let's get started with caring for your new friend!\n";
 
