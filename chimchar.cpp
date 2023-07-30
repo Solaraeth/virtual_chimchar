@@ -38,8 +38,9 @@
 int main() {
     
     std::string nickname;
-    std::vector<std::string> stats = {"Level", "Hunger", "Happiness",};
-    std::vector<int> statValue = {1, 1, 1, 1};
+    std::vector<std::string> stats = {"Level", "Hunger", "Happiness"};
+    std::vector<int> statValue = {1, 1, 1};
+    std::string command;
 
     std::cout << "Welcome to Chimchar Care.\n\n"
 
@@ -72,7 +73,42 @@ int main() {
                 "If you balance " << nickname << "'s needs right, " << nickname << " will evolve in no time.\n\n"
                 
                 "Now let's get started with caring for your new friend!\n";
+    while(statValue[0] < 5) {
 
+        std::cout << "What do you want to do with " << nickname << " : ";
+        std::cin >> command;
+
+        if (command == "feed") {
+
+            statValue[1] = statValue[0] + 1;
+
+        }
+
+        else if (command == "play") {
+
+            statValue[2] = statValue[2] + 1;
+        }
+
+        else if (command == "train") {
+
+            statValue[0] = statValue[0] + 1;
+            std::cout << "Nice! " << nickname << " is now Lvl " << statValue[0] << "!\n";
+        }
+
+        else {
+
+            std::cout << "Invalid input\n";
+        }
+
+    }
+    
+    std::cout << "Woah! " << nickname << " is evolving\n\n"
+
+                "Congratulations, you've done it! Your excellent care and dedication has helped " << nickname << " evolve into Infernape\n\n"
+
+                "With this accomplishment you've proven yourself to be a top-notch Pokemon trainer!\n\n"
+
+                "Thank you for playing Chimchar Care!\n";
                 
 }
 
