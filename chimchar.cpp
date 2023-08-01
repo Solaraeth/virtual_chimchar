@@ -54,15 +54,33 @@ int main() {
 
         // If user types "feed" incresases hunger by 1
         if (command == "feed") {
+            
+            if (statValue[1] < 5) {
+            
+                statValue[1] = statValue[1] + 1;
+            
+            }
+            
+            else {
 
-            statValue[1] = statValue[0] + 1;
+                std::cout << "\n" << nickname << " is too full to eat any more.\n";
+            }
 
         }
 
         // If user types "play" increases happiness by 1
         else if (command == "play") {
 
-            statValue[2] = statValue[2] + 1;
+            if (statValue[2] < 5) {
+
+               statValue[2] = statValue[2] + 1; 
+            }
+            
+            else {
+                
+                std::cout << "\n" << nickname << " doesn't want to play anymore.\n";
+
+            }
         }
 
         // If user types "train" increases level by 1
@@ -76,7 +94,7 @@ int main() {
         else if (command == "stats") {
 
             std::cout << "\nThese are " << nickname << "'s current stats:\n" 
-            << stats[0] << " - " << statValue[0] << "\n" << stats[1] << " - " << statValue[1] << "\n" << stats [2] << " - "<< statValue[0] << "\n\n";
+            << stats[0] << " - " << statValue[0] << "\n" << stats[1] << " - " << statValue[1] << "\n" << stats [2] << " - "<< statValue[2] << "\n\n";
         }
 
         // If user types "commands" prints list of valid inputs and their effects
