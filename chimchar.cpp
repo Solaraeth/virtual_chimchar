@@ -1,37 +1,3 @@
-/*To-Do List
-- Opening text explaining Game
-- Vector containing the stats
-- Print Chimchar's current Stats
-    - Hunger
-    - Happiness
-    - Cleanliness
-    - Level
-
-- Main game loop of player intraction with chimchar
-    - Hunger goes up when fed and down when played with
-    - Happieness goes up when played with and down when trained with further penalty for low hunger
-    - Level goes up when trained
-    - Input validation
-
-- Evolution
-    - Chimchar > Monferno Lvl.16
-    - Monferno > Infernape Lvl.36
-
-- Check for win/lose conditions
-- Congratulations for completing game by evloving chimchar into infernape message
-
-- Extras
-    - Gender Selection
-    - Test functions to validate program logic
-    - Random messages messages about interaction with chimchar based on value of all stats
-    - Saving/loadiing progress
-    - Random events that affect stats
-    - Easter eggs/secrets
-    
-- Aspirational
-    - UI
-    - Graphics/Audio*/
-
 #include <iostream>
 #include <vector>
 
