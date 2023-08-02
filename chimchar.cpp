@@ -6,6 +6,7 @@ int main() {
     // Variables
     std::string nickname;
     std::string command;
+    bool game_complete;
     
     // Vectors
     std::vector<std::string> stats = {"Level", "Hunger", "Happiness"};
@@ -40,13 +41,30 @@ int main() {
                 << stats[0] << "-" << statValue[0] << " " << stats[1] << "-" << statValue[1] << " " << stats [2] << "-"<< statValue[0] << "\n\n"
                 
                 "Type 'help' at any time to review commands and their effects.\n\n"
+
+                "Type 'exit' to end the game.\n\n"
                 
                 "If you balance " << nickname << "'s needs right, " << nickname << " will evolve in no time.\n\n"
                 
                 "Now let's get started with caring for your new friend!\n\n";
 
     //Main game while loop
-    while(statValue[0] < 5) {
+    do {
+
+        // Check level
+        if (statValue[0] == 5) {
+
+            //Congratulations message to user for completing Game
+            std::cout << "Woah! " << nickname << " is evolving\n\n"
+
+                        "Congratulations, you've done it! Your excellent care and dedication has helped " << nickname << " evolve into Infernape\n\n"
+
+                        "With this accomplishment you've proven yourself to be a top-notch Pokemon trainer!\n\n"
+
+                        "Thank you for playing Chimchar Care!\n";
+
+            game_complete = true;
+        }
         
         // Prints congratualtion message for evlolving Chimchar into a monferno
         if (statValue[0] == 3) {
@@ -149,7 +167,7 @@ int main() {
             << stats[0] << " - " << statValue[0] << "\n" << stats[1] << " - " << statValue[1] << "\n" << stats [2] << " - "<< statValue[2] << "\n\n";
         }
 
-        // If user types "commands" prints list of valid inputs and their effects
+        // If user types "help" prints list of valid inputs and their effects
         else if (command == "help") {
 
             std::cout << "\nCommands:\n"
@@ -157,7 +175,17 @@ int main() {
                         "play: Increases " << nickname << "'s happiness stat by 1\n"
                         "train: Increases " << nickname << "'s level  by 1\n"
                         "stats: Reveals " << nickname << "'s current stats\n"
-                        "help: Shows the list of commands and their effects\n";
+                        "help: Shows the list of commands and their effects\n"
+                        "exit: Ends the game";
+        
+        }
+        
+        // Exit command
+        else if (command == "exit") {
+
+            std::cout << "\nQuiting...\n";
+
+            game_complete = true;
 
         }
 
@@ -169,17 +197,7 @@ int main() {
         
         // Improves readability
         std::cout << "\n";
-    }
+    } while (!game_complete);
     
-    //Congratulations message to user for completing Game
-    std::cout << "Woah! " << nickname << " is evolving\n\n"
-
-                "Congratulations, you've done it! Your excellent care and dedication has helped " << nickname << " evolve into Infernape\n\n"
-
-                "With this accomplishment you've proven yourself to be a top-notch Pokemon trainer!\n\n"
-
-                "Thank you for playing Chimchar Care!\n";
                 
 }
-
-
