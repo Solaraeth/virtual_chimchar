@@ -71,9 +71,16 @@ int main() {
         // If user types "play" increases happiness by 1
         else if (command == "play") {
 
-            if (statValue[2] < 5) {
+            if (statValue[1] == 0) {
+
+                std::cout << "\n" << nickname << " is too hungry to to play.\n";
+
+            }
+
+            else if (statValue[2] < 5) {
 
                statValue[2] = statValue[2] + 1; 
+               statValue[1] = statValue[1] - 1;
             }
             
             else {
@@ -86,8 +93,27 @@ int main() {
         // If user types "train" increases level by 1
         else if (command == "train") {
 
-            statValue[0] = statValue[0] + 1;
-            std::cout << "Nice! " << nickname << " is now Lvl " << statValue[0] << "!\n";
+            if (statValue[1] == 0) {
+
+                std::cout << "\n" << nickname << " is too hungry to to train.\n";
+
+            }
+
+            else if (statValue[2] == 0) {
+
+                std::cout << "\n" << nickname << " wants to play.\n";
+
+            }
+
+            else {
+
+                statValue[0] = statValue[0] + 1;
+                statValue[1] = statValue[1] - 1;
+                statValue[2] = statValue[2] - 1;
+                std::cout << "\nNice! " << nickname << " is now Lvl " << statValue[0] << "!\n";
+
+            }
+
         }
 
         // If user types "stats" reveals chimchar's current stat values
