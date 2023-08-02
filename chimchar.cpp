@@ -39,7 +39,7 @@ int main() {
                 "These are their current Values:\n"
                 << stats[0] << "-" << statValue[0] << " " << stats[1] << "-" << statValue[1] << " " << stats [2] << "-"<< statValue[0] << "\n\n"
                 
-                "Type 'commands' at any time to review commands and their effects.\n\n"
+                "Type 'help' at any time to review commands and their effects.\n\n"
                 
                 "If you balance " << nickname << "'s needs right, " << nickname << " will evolve in no time.\n\n"
                 
@@ -47,20 +47,40 @@ int main() {
 
     //Main game while loop
     while(statValue[0] < 5) {
+        
+        // Prints congratualtion message for evlolving Chimchar into a monferno
+        if (statValue[0] == 3) {
+
+            std::cout << "Woah! " << nickname << " is evolving\n\n"
+
+                        "Congratulations " << nickname << " evolved into Monferno\n\n"
+
+                        "You're doing great!\n\nAt this rate " << nickname << " will be an Infernape in no time.\n\n";
+
+            std::cout << "What do you want to do with " << nickname << " : ";
+            std::cin >> command;
+
+        }
 
         //Asks user to input chimchar interaction command
-        std::cout << "What do you want to do with " << nickname << " : ";
-        std::cin >> command;
+        else {
 
-        // If user types "feed" incresases hunger by 1
+            std::cout << "What do you want to do with " << nickname << " : ";
+            std::cin >> command;
+
+        }
+
+        // Conditional statements for "feed" command
         if (command == "feed") {
             
+            // If hunger is < 5 "feed" stat increases hunger by 1
             if (statValue[1] < 5) {
             
                 statValue[1] = statValue[1] + 1;
             
             }
             
+            // If hunger = 5 "feed" no longer increases hunger
             else {
 
                 std::cout << "\n" << nickname << " is too full to eat any more.\n";
@@ -68,21 +88,24 @@ int main() {
 
         }
 
-        // If user types "play" increases happiness by 1
+        // Conditional statements for "play" command
         else if (command == "play") {
 
+            // if hunger = 0 chimchar is unable to play to increase happiness by 1
             if (statValue[1] == 0) {
 
                 std::cout << "\n" << nickname << " is too hungry to to play.\n";
 
             }
 
+            // If happiness is < 5 "play" command activates successfuly increasing the value 1
             else if (statValue[2] < 5) {
 
                statValue[2] = statValue[2] + 1; 
                statValue[1] = statValue[1] - 1;
             }
             
+            // If hapiness is = to 5 "play" will no longer increase the value by 1
             else {
                 
                 std::cout << "\n" << nickname << " doesn't want to play anymore.\n";
@@ -93,18 +116,21 @@ int main() {
         // If user types "train" increases level by 1
         else if (command == "train") {
 
+            // Prevents increasing level with "train" if hunger = 0
             if (statValue[1] == 0) {
 
                 std::cout << "\n" << nickname << " is too hungry to to train.\n";
 
             }
 
+            // Prevents increasing level with "train" if happiness = 0
             else if (statValue[2] == 0) {
 
                 std::cout << "\n" << nickname << " wants to play.\n";
 
             }
 
+            // Increases level by +1 if happiness & hunger are both > 0
             else {
 
                 statValue[0] = statValue[0] + 1;
@@ -124,21 +150,21 @@ int main() {
         }
 
         // If user types "commands" prints list of valid inputs and their effects
-        else if (command == "commands") {
+        else if (command == "help") {
 
             std::cout << "\nCommands:\n"
                         "feed: Increases " << nickname << "'s hunger stat by 1\n"
                         "play: Increases " << nickname << "'s happiness stat by 1\n"
                         "train: Increases " << nickname << "'s level  by 1\n"
                         "stats: Reveals " << nickname << "'s current stats\n"
-                        "commands: Shows the list of commands and their effects\n";
+                        "help: Shows the list of commands and their effects\n";
 
         }
 
         // Error message for invalid command inputs from user
         else {
 
-            std::cout << "Invalid input\n";
+            std::cout << "\nInvalid input\n";
         }
         
         // Improves readability
